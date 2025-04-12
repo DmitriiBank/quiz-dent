@@ -1,8 +1,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    /*line-height: 1.6;*/
     color: #333;
-    max-width: 100%;
+    /*max-width: 100%;*/
     margin: 0 auto;
     padding: 10px;
     background-color: #f5f5f5;
@@ -21,10 +21,8 @@ h1 {
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin: 20px auto;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 img {
@@ -45,17 +43,21 @@ img {
 }
 
 .question-text {
-    font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
     color: #2c3e50;
 }
 
 .options {
-    margin: 15px 0;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .option {
+    width: 43%;
     padding: 10px;
     margin: 8px 0;
     background-color: #f8f9fa;
@@ -63,7 +65,6 @@ img {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s;
-    font-size: 16px;
 }
 
 .option:hover {
@@ -99,7 +100,6 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
     transition: background-color 0.2s;
     flex-grow: 1;
     text-align: center;
@@ -117,7 +117,6 @@ button:disabled {
 .progress {
     margin: 15px 0;
     text-align: center;
-    font-size: 16px;
 }
 
 .results {
@@ -125,7 +124,6 @@ button:disabled {
     padding: 15px;
     background-color: #e2e3e5;
     border-radius: 5px;
-    font-size: 16px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
