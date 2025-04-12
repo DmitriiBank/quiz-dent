@@ -139,36 +139,36 @@ button:disabled {
     margin: 15px auto;
 }
 
-/* Медиа-запросы для адаптивности */
-@media (max-width: 768px) {
-    body {
-        padding: 8px;
-    }
+/*!* Медиа-запросы для адаптивности *!*/
+/*@media (max-width: 768px) {*/
+/*    body {*/
+/*        padding: 8px;*/
+/*    }*/
 
-    h1 {
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
+/*    h1 {*/
+/*        font-size: 24px;*/
+/*        margin-bottom: 15px;*/
+/*    }*/
 
-    .quiz-container {
-        padding: 12px;
-        margin-bottom: 15px;
-    }
+/*    .quiz-container {*/
+/*        padding: 12px;*/
+/*        margin-bottom: 15px;*/
+/*    }*/
 
-    .question-text {
-        font-size: 16px;
-    }
+/*    .question-text {*/
+/*        font-size: 16px;*/
+/*    }*/
 
-    .option {
-        padding: 12px;
-        font-size: 16px;
-    }
+/*    .option {*/
+/*        padding: 12px;*/
+/*        font-size: 16px;*/
+/*    }*/
 
-    button {
-        padding: 14px 15px;
-        font-size: 16px;
-    }
-}
+/*    button {*/
+/*        padding: 14px 15px;*/
+/*        font-size: 16px;*/
+/*    }*/
+/*}*/
 
 @media (max-width: 480px) {
     body {
