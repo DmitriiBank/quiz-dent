@@ -2,19 +2,18 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    margin: 0;
-    padding: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
     background-color: #f5f5f5;
-    -webkit-text-size-adjust: 100%; /* Предотвращает автоматическое изменение размера текста */
-    touch-action: pan-x pan-y; /* Ограничивает жесты до панорамирования по X и Y */
+    box-sizing: border-box;
 }
 
 h1 {
     text-align: center;
     color: #2c3e50;
-    margin: 15px 0;
-    padding: 0 10px;
-    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-size: 28px;
 }
 
 .quiz-container {
@@ -22,11 +21,10 @@ h1 {
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin: 10px auto;
-    width: calc(100% - 20px);
+    margin-bottom: 20px;
     max-width: 800px;
-    box-sizing: border-box;
-    overflow: hidden; /* Предотвращает переполнение */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 img {
@@ -34,8 +32,6 @@ img {
     height: auto;
     margin: 10px auto;
     display: block;
-    touch-action: none; /* Предотвращает зум на изображениях при двойном касании */
-    pointer-events: none; /* Предотвращает взаимодействие с изображением */
 }
 
 .question {
@@ -49,11 +45,10 @@ img {
 }
 
 .question-text {
-    font-size: 1.1em;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
     color: #2c3e50;
-    word-wrap: break-word; /* Для длинных слов */
 }
 
 .options {
@@ -61,22 +56,18 @@ img {
 }
 
 .option {
-    padding: 12px;
-    margin: 10px 0;
+    padding: 10px;
+    margin: 8px 0;
     background-color: #f8f9fa;
     border: 1px solid #ddd;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s;
-    font-size: 1rem;
-    word-wrap: break-word; /* Для длинных слов */
-    position: relative; /* Для стабильного позиционирования */
-    -webkit-tap-highlight-color: transparent; /* Убираем подсветку при тапе */
+    transition: all 0.2s;
+    font-size: 16px;
 }
 
-.option:active {
+.option:hover {
     background-color: #e9ecef;
-    transform: scale(0.99); /* Небольшой эффект нажатия без перестроения DOM */
 }
 
 .option.selected {
@@ -112,12 +103,10 @@ button {
     transition: background-color 0.2s;
     flex-grow: 1;
     text-align: center;
-    -webkit-tap-highlight-color: transparent; /* Убираем подсветку при тапе */
 }
 
-button:active {
+button:hover {
     background-color: #0056b3;
-    transform: scale(0.98); /* Небольшой эффект нажатия */
 }
 
 button:disabled {
@@ -128,87 +117,85 @@ button:disabled {
 .progress {
     margin: 15px 0;
     text-align: center;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .results {
-    margin: 15px auto;
+    margin-top: 20px;
     padding: 15px;
     background-color: #e2e3e5;
     border-radius: 5px;
     font-size: 16px;
     max-width: 800px;
-    width: calc(100% - 20px);
-    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
     display: none;
-    word-wrap: break-word; /* Для длинных слов */
 }
 
 #restart-btn {
     display: none;
-    width: calc(100% - 20px);
+    width: 100%;
     max-width: 800px;
     margin: 15px auto;
 }
 
-/* Медиа-запросы для адаптивности */
-@media (max-width: 768px) {
-    body {
-        padding: 0;
-    }
+/*!* Медиа-запросы для адаптивности *!*/
+/*@media (max-width: 768px) {*/
+/*    body {*/
+/*        padding: 8px;*/
+/*    }*/
 
-    h1 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
+/*    h1 {*/
+/*        font-size: 24px;*/
+/*        margin-bottom: 15px;*/
+/*    }*/
 
-    .quiz-container {
-        padding: 12px;
-        margin-bottom: 15px;
-        border-radius: 0; /* Убираем скругление на полный экран */
-    }
+/*    .quiz-container {*/
+/*        padding: 12px;*/
+/*        margin-bottom: 15px;*/
+/*    }*/
 
-    .question-text {
-        font-size: 1rem;
-    }
+/*    .question-text {*/
+/*        font-size: 16px;*/
+/*    }*/
 
-    .option {
-        padding: 14px 12px;
-        font-size: 0.95rem;
-    }
+/*    .option {*/
+/*        padding: 12px;*/
+/*        font-size: 16px;*/
+/*    }*/
 
-    button {
-        padding: 15px;
-        font-size: 1rem;
-    }
-}
+/*    button {*/
+/*        padding: 14px 15px;*/
+/*        font-size: 16px;*/
+/*    }*/
+/*}*/
 
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.3rem;
-    }
+/*@media (max-width: 480px) {*/
+/*    body {*/
+/*        padding: 5px;*/
+/*    }*/
 
-    .quiz-container {
-        padding: 10px;
-    }
+/*    h1 {*/
+/*        font-size: 20px;*/
+/*    }*/
 
-    .option {
-        padding: 12px 10px;
-        margin: 8px 0;
-    }
+/*    .quiz-container {*/
+/*        padding: 10px;*/
+/*        border-radius: 6px;*/
+/*        width: 100%;*/
+/*    }*/
 
-    .navigation {
-        flex-direction: column;
-    }
+/*    .option {*/
+/*        padding: 10px;*/
+/*        margin: 6px 0;*/
+/*    }*/
 
-    button {
-        width: 100%;
-        margin: 5px 0;
-        padding: 14px 10px;
-    }
-}
+/*    .navigation {*/
+/*        flex-direction: column;*/
+/*    }*/
 
-/* Класс для фиксирования размеров при зуме */
-.prevent-zoom {
-    touch-action: pan-x pan-y;
-}
+/*    button {*/
+/*        width: 100%;*/
+/*        margin: 5px 0;*/
+/*    }*/
+/*}*/

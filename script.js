@@ -113,24 +113,6 @@ const totalQuestionsSpan = document.getElementById('total-questions');
 
 totalQuestionsSpan.textContent = questions.length;
 
-// Предотвращение зума при двойном касании
-function preventZoom(e) {
-    const t2 = e.timeStamp;
-    const t1 = e.currentTarget.dataset.lastTouch || t2;
-    const dt = t2 - t1;
-    const fingers = e.touches.length;
-    e.currentTarget.dataset.lastTouch = t2;
-
-    if (!dt || dt > 500 || fingers > 1) return; // Не двойной тап или мультитач
-
-    e.preventDefault();
-    e.stopPropagation();
-}
-
-// Добавляем обработчик предотвращения зума
-document.body.addEventListener('touchstart', preventZoom, false);
-document.body.classList.add('prevent-zoom');
-
 function displayQuestion() {
     const question = questions[currentQuestion];
     currentQuestionSpan.textContent = currentQuestion + 1;
@@ -174,37 +156,23 @@ function displayQuestion() {
         nextBtn.textContent = 'Вперед';
     }
 
-    // Плавная прокрутка страницы вверх
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    // Add event listeners to options
+    document.querySelectorAll('.option').forEach(option => {
+        option.addEventListener('click', selectOption);
     });
-
-    // Add event listeners to options with делегированием событий
-    const optionsContainer = document.querySelector('.options');
-    if (optionsContainer) {
-        // Удаляем предыдущие обработчики перед добавлением новых
-        optionsContainer.removeEventListener('click', handleOptionClick);
-        optionsContainer.addEventListener('click', handleOptionClick);
-    }
 }
 
-// Делегирование события клика для вариантов ответа
-function handleOptionClick(e) {
-    const optionElement = e.target.closest('.option');
-    if (!optionElement || userAnswers[currentQuestion] !== null) return;
+function selectOption(e) {
+    if (userAnswers[currentQuestion] !== null) return;
 
-    const selectedIndex = parseInt(optionElement.getAttribute('data-option'));
+    const selectedIndex = parseInt(e.currentTarget.getAttribute('data-option'));
     userAnswers[currentQuestion] = selectedIndex;
 
     if (selectedIndex === questions[currentQuestion].answer) {
         score++;
     }
 
-    // Небольшая задержка для отображения выбранного варианта
-    setTimeout(() => {
-        displayQuestion();
-    }, 100);
+    displayQuestion();
 }
 
 // Navigation functions
@@ -233,7 +201,7 @@ function displayResults() {
 
     // Показываем результаты и кнопку перезапуска
     resultsDiv.style.display = 'block';
-    restartBtn.style.display = 'block';
+    restartBtn.style.display = 'inline-block';
 
     let resultHTML = `
         <h2>Результаты теста</h2>
@@ -264,12 +232,6 @@ function displayResults() {
     });
 
     resultsDiv.innerHTML = resultHTML;
-
-    // Плавная прокрутка страницы вверх
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
 }
 
 function restartQuiz() {
@@ -289,45 +251,10 @@ function restartQuiz() {
     displayQuestion();
 }
 
-// Event listeners с использованием passive опции для улучшения производительности
-nextBtn.addEventListener('click', goToNextQuestion, { passive: true });
-prevBtn.addEventListener('click', goToPrevQuestion, { passive: true });
-restartBtn.addEventListener('click', restartQuiz, { passive: true });
+// Event listeners
+nextBtn.addEventListener('click', goToNextQuestion);
+prevBtn.addEventListener('click', goToPrevQuestion);
+restartBtn.addEventListener('click', restartQuiz);
 
-// Добавляем мета-теги для лучшего масштабирования на мобильных устройствах
-function setupMobileViewport() {
-    // Удаляем существующий мета-тег viewport если он есть
-    const existingViewport = document.querySelector('meta[name="viewport"]');
-    if (existingViewport) {
-        existingViewport.parentNode.removeChild(existingViewport);
-    }
-
-    // Добавляем новый мета-тег viewport с настройками
-    const meta = document.createElement('meta');
-    meta.name = 'viewport';
-    meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
-    document.head.appendChild(meta);
-
-    // Добавляем теги для iOS
-    const metaApple = document.createElement('meta');
-    metaApple.name = 'apple-mobile-web-app-capable';
-    metaApple.content = 'yes';
-    document.head.appendChild(metaApple);
-}
-
-// Отключаем масштабирование двойным постукиванием
-function preventDoubleTapZoom() {
-    let lastTouchEnd = 0;
-    document.addEventListener('touchend', function(e) {
-        const now = Date.now();
-        if (now - lastTouchEnd <= 300) {
-            e.preventDefault();
-        }
-        lastTouchEnd = now;
-    }, { passive: false });
-}
-
-// Initialize
-setupMobileViewport();
-preventDoubleTapZoom();
+// Initialize quiz
 displayQuestion();
