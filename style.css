@@ -13,7 +13,7 @@ h1 {
     text-align: center;
     color: #2c3e50;
     margin-bottom: 20px;
-    font-size: 1.8rem;
+    font-size: 28px;
 }
 
 .quiz-container {
@@ -45,7 +45,7 @@ img {
 }
 
 .question-text {
-    font-size: 1.1em;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 15px;
     color: #2c3e50;
@@ -63,7 +63,7 @@ img {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .option:hover {
@@ -117,7 +117,7 @@ button:disabled {
 .progress {
     margin: 15px 0;
     text-align: center;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .results {
@@ -146,7 +146,7 @@ button:disabled {
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: 24px;
         margin-bottom: 15px;
     }
 
@@ -156,17 +156,17 @@ button:disabled {
     }
 
     .question-text {
-        font-size: 1rem;
+        font-size: 16px;
     }
 
     .option {
         padding: 12px;
-        font-size: 0.95rem;
+        font-size: 16px;
     }
 
     button {
         padding: 14px 15px;
-        font-size: 1rem;
+        font-size: 16px;
     }
 }
 
@@ -176,7 +176,7 @@ button:disabled {
     }
 
     h1 {
-        font-size: 1.3rem;
+        font-size: 20px;
     }
 
     .quiz-container {
