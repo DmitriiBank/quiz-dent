@@ -22,7 +22,7 @@ h1 {
     padding: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
-    max-width: 800px;
+    max-width: 600px;
 }
 
 img {
@@ -51,13 +51,15 @@ img {
 .options {
     margin: 15px auto;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
+    /*flex-direction: row;*/
+    /*flex-wrap: wrap;*/
+    /*justify-content: space-between;*/
 }
 
 .option {
-    width: 43%;
+    width: 94%;
     padding: 10px;
     margin: 8px 0;
     background-color: #f8f9fa;
@@ -72,16 +74,19 @@ img {
 }
 
 .option.selected {
+    /*width: 42%;*/
     background-color: #d4e6f1;
     border-left: 4px solid #5c9edc;
 }
 
 .option.correct {
+    /*width: 42%;*/
     background-color: #d4edda;
     border-left: 4px solid #28a745;
 }
 
 .option.incorrect {
+    /*width: 42%;*/
     background-color: #f8d7da;
     border-left: 4px solid #dc3545;
 }
@@ -93,25 +98,59 @@ img {
     gap: 10px;
 }
 
+/* Основные стили для всех кнопок */
 button {
+    min-width: 100px;
     padding: 12px 20px;
+    margin: 0 5px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s;
-    flex-grow: 1;
+    transition: all 0.2s ease;
+    font-size: 16px;
+    font-weight: 500;
     text-align: center;
+    flex-grow: 1;
 }
 
-button:hover {
-    background-color: #0056b3;
+/* Стили для кнопки "Вперед" (когда активна как "Ответить") */
+#next-btn.answer-mode {
+    background-color: #28a745; /* Зеленый цвет для кнопки ответа */
 }
 
+/* Состояние при наведении */
+button:not(:disabled):hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Кнопка "Назад" */
+#prev-btn {
+    background-color: #6c757d; /* Серый цвет */
+}
+
+/* Кнопка "Показать результаты" */
+#next-btn.results-mode {
+    background-color: #17a2b8; /* Бирюзовый цвет */
+}
+
+/* Заблокированное состояние */
 button:disabled {
-    background-color: #6c757d;
+    background-color: #e9ecef;
+    color: #adb5bd;
     cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Контейнер для кнопок (если нужно) */
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .progress {
@@ -137,63 +176,13 @@ button:disabled {
     margin: 15px auto;
 }
 
-/*!* Медиа-запросы для адаптивности *!*/
-/*@media (max-width: 768px) {*/
-/*    body {*/
-/*        padding: 8px;*/
-/*    }*/
+@media screen and (max-width: 800px) {
+    .question, .options, button {
+        font-size: 20px;
+    }
 
-/*    h1 {*/
-/*        font-size: 24px;*/
-/*        margin-bottom: 15px;*/
-/*    }*/
+    /*.options, button {*/
+    /*    height: 60px;*/
+    /*}*/
+}
 
-/*    .quiz-container {*/
-/*        padding: 12px;*/
-/*        margin-bottom: 15px;*/
-/*    }*/
-
-/*    .question-text {*/
-/*        font-size: 16px;*/
-/*    }*/
-
-/*    .option {*/
-/*        padding: 12px;*/
-/*        font-size: 16px;*/
-/*    }*/
-
-/*    button {*/
-/*        padding: 14px 15px;*/
-/*        font-size: 16px;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 480px) {*/
-/*    body {*/
-/*        padding: 5px;*/
-/*    }*/
-
-/*    h1 {*/
-/*        font-size: 20px;*/
-/*    }*/
-
-/*    .quiz-container {*/
-/*        padding: 10px;*/
-/*        border-radius: 6px;*/
-/*        width: 100%;*/
-/*    }*/
-
-/*    .option {*/
-/*        padding: 10px;*/
-/*        margin: 6px 0;*/
-/*    }*/
-
-/*    .navigation {*/
-/*        flex-direction: column;*/
-/*    }*/
-
-/*    button {*/
-/*        width: 100%;*/
-/*        margin: 5px 0;*/
-/*    }*/
-/*}*/

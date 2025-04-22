@@ -1,107 +1,316 @@
+// const questions = [
+//     {question: "Что изображено под цифрой 4",
+//         image: `<img src= "./image/jaws2.jpg" />`,
+//         options: ["твердое нёбо","мягкое нёбо", "миндалина", "нёбно-язычная дужка"],
+//         answer: 2,
+//     },
+//     {question: "Что изображено под цифрой 4",
+//         image: `<img src= "./image/jaws.png" />`,
+//         options: ["клыки","премоляры", "моляры", "зубы мудрости"],
+//         answer: 2,
+//     },
+//     {question: "Что изображено под цифрой 3",
+//         image: `<img src= "./image/jaws.png" />`,
+//         options: ["клыки","премоляры", "моляры"],
+//         answer: 1,
+//     },
+//     {question: "Что изображено под цифрой 7",
+//         image: `<img src= "./image/jaws.png" />`,
+//         options: ["резцы верхней челюсти", "резцы нижней челюсти", "клыки верхней челюсти", "клыки нижней челюсти"],
+//         answer: 1,
+//     },
+//     {question: "Какая челюсть представлена на фото",
+//         image: `<img src= "./image/mandibula.jpg" />`,
+//         options: ["верхняя", "нижняя"],
+//         answer: 1,
+//     },
+//     {question: "Как называется зуб 1.5",
+//         options: ["второй премоляр верхней челюсти справа", "второй премоляр верхней челюсти слева", "второй премоляр нижней челюсти справа", "второй премоляр нижней челюсти слева"],
+//         answer: 0,
+//     },
+//     {question: "Каких молочных зубов не существует",
+//         options: ["резцы", "клыки","премоляры", "моляры"],
+//         answer: 2,
+//     },
+//     {question: "Назовите челюсть и сторону зуба под вопросом",
+//         image: `<img src= "./image/maxila.png" />`,
+//         options: ["верхняя челюсть справа","верхняя челюсть слева","нижняя челюсть справа","нижняя челюсть слева"],
+//         answer: 1,
+//     },
+//     {question: "Что изображено под цифрой 2",
+//         image: `<img src= "./image/tooth.png" />`,
+//         options: ["эмаль", "цемент","пульпа", "дентин"],
+//         answer: 3,
+//     },
+//     {question: "Что изображено под цифрой 4",
+//         image: `<img src= "./image/tooth.png" />`,
+//         options: ["эмаль", "дентин","коронка", "корень"],
+//         answer: 2,
+//     },
+//     {question: "Что изображено под цифрой 6",
+//         image: `<img src= "./image/tooth.png" />`,
+//         options: ["коронка", "десна","корень", "кость"],
+//         answer: 3,
+//     },
+//     {question: "Назовите сторону под цифрой 5",
+//         image: `<img src= "./image/sides.png" />`,
+//         options: ["мезиальная","дистальная","небная","окклюзионная","вестибулярная","язычная"],
+//         answer: 4,
+//     },
+//     { question: "Кариес - это...",
+//         image: `<img src= "./image/caries.png" />`,
+//         options: ["патологический процесс твердых тканей, возникающий до прорезывания зуба под воздействием общих и местных факторов, сопровождающийся деминерализацией эмали с последующим образованием дефекта в виде полости.", "патологический процесс твердых тканей, возникающий после прорезывания зуба под воздействием общих и местных факторов, сопровождающийся деминерализацией эмали с последующим образованием дефекта в виде полости.", "патологический процесс твердых тканей, возникающий после прорезывания зуба под воздействием общих и местных факторов, сопровождающийся минерализацией эмали с последующим образованием дефекта в виде полости."],
+//         answer: 1,
+//     },
+//     {question: "Назовите класс по Блэку",
+//         image: `<img src= "./image/Black2.png" />`,
+//         options: ["I", "II","III-IV", "V"],
+//         answer: 1,
+//     },
+//     {question: "Назовите класс по Блэку",
+//         image: `<img src= "./image/Black1.png" />`,
+//         options: ["I", "II","III-IV", "V"],
+//         answer: 0,
+//     },
+//     {question: "Назовите класс по Блэку",
+//         image: `<img src= "./image/black5.png" />`,
+//         options: ["I", "II","III-IV", "V"],
+//         answer: 3,
+//     },
+//     {question: "Назовите класс по Блэку",
+//         image: `<img src= "./image/Black3.png" />`,
+//         options: ["I", "II","III-IV", "V"],
+//         answer: 2,
+//     },
+//     {question: "Что за поражение зубов представлено на фото?",
+//         image: `<img src= "./image/flor.png" />`,
+//         options: ["кариес", "гипоплазия","флюороз", "эрозия"],
+//         answer: 2,
+//     },
+//     {question: "Назовите протез",
+//         image: `<img src= "./image/structure.png" />`,
+//         options: ["виниры", "вкладки","вкладки штифтовые", "коронки"],
+//         answer: 1,
+//     },
+//     {question: "Назовите конструкцию вкладки",
+//         image: `<img src= "./image/onlay.png" />`,
+//         options: ["onlay", "inlay","overlay", "crown"],
+//         answer: 0,
+//     },
+// ];
 const questions = [
-    {question: "Что изображено под цифрой 4",
-        image: `<img src= "./image/jaws2.jpg" />`,
-        options: ["твердое нёбо","мягкое нёбо", "миндалина", "нёбно-язычная дужка"],
+    {
+        question: "К общим кариесогенным факторам относится:",
+        options: [
+            "Зубной налет и зубная бляшка",
+            "Соматические заболевания в период формирования тканей зуба",
+            "Нарушение состава ротовой жидкости",
+            "Углеводистые липкие пищевые остатки в полости рта"
+        ],
+        answer: 1,
+    },
+    {
+        question: "Какой из признаков характерен для острого течения кариеса?",
+        options: [
+            "Медленное развитие процесса",
+            "Пигментация тканей зуба",
+            "Быстрое размягчение твердых тканей зуба",
+            "Плотное дно кариозной полости"
+        ],
         answer: 2,
     },
-    {question: "Что изображено под цифрой 4",
-        image: `<img src= "./image/jaws.png" />`,
-        options: ["клыки","премоляры", "моляры", "зубы мудрости"],
-        answer: 2,
-    },
-    {question: "Что изображено под цифрой 3",
-        image: `<img src= "./image/jaws.png" />`,
-        options: ["клыки","премоляры", "моляры"],
-        answer: 1,
-    },
-    {question: "Что изображено под цифрой 7",
-        image: `<img src= "./image/jaws.png" />`,
-        options: ["резцы верхней челюсти", "резцы нижней челюсти", "клыки верхней челюсти", "клыки нижней челюсти"],
-        answer: 1,
-    },
-    {question: "Какая челюсть представлена на фото",
-        image: `<img src= "./image/mandibula.jpg" />`,
-        options: ["верхняя", "нижняя"],
-        answer: 1,
-    },
-    {question: "Как называется зуб 1.5",
-        options: ["второй премоляр верхней челюсти справа", "второй премоляр верхней челюсти слева", "второй премоляр нижней челюсти справа", "второй премоляр нижней челюсти слева"],
-        answer: 0,
-    },
-    {question: "Каких молочных зубов не существует",
-        options: ["резцы", "клыки","премоляры", "моляры"],
-        answer: 2,
-    },
-    {question: "Назовите челюсть и сторону зуба под вопросом",
-        image: `<img src= "./image/maxila.png" />`,
-        options: ["верхняя челюсть справа","верхняя челюсть слева","нижняя челюсть справа","нижняя челюсть слева"],
-        answer: 1,
-    },
-    {question: "Что изображено под цифрой 2",
-        image: `<img src= "./image/tooth.png" />`,
-        options: ["эмаль", "цемент","пульпа", "дентин"],
+    {
+        question: "К местным кариесогенным факторам относится:",
+        options: [
+            "Экстремальные воздействия на организм",
+            "Наследственная предрасположенность",
+            "Неполноценная диета",
+            "Плохая гигиена полости рта"
+        ],
         answer: 3,
     },
-    {question: "Что изображено под цифрой 4",
-        image: `<img src= "./image/tooth.png" />`,
-        options: ["эмаль", "дентин","коронка", "корень"],
-        answer: 2,
+    {
+        question: "В каком слое дентина при развитии кариозного процесса происходит деминерализация без разрушения органической матрицы?",
+        image: `<img src= "./image/cariesDentin.jpg" />`,
+        options: [
+            "Инфицированный",
+            "Прозрачный",
+            "Мутный",
+            "Нормальный"
+        ],
+        answer: 1,
     },
-    {question: "Что изображено под цифрой 6",
-        image: `<img src= "./image/tooth.png" />`,
-        options: ["коронка", "десна","корень", "кость"],
+    {
+        question: "Как по гистологической классификации кариеса обозначается приостановившийся кариес?",
+        options: [
+            "К 02.0",
+            "К 02.1",
+            "К 02.2",
+            "К 02.3"
+        ],
         answer: 3,
     },
-    {question: "Назовите сторону под цифрой 5",
-        image: `<img src= "./image/sides.png" />`,
-        options: ["мезиальная","дистальная","небная","окклюзионная","вестибулярная","язычная"],
-        answer: 4,
-    },
-    { question: "Кариес - это...",
-        image: `<img src= "./image/caries.png" />`,
-        options: ["патологический процесс твердых тканей, возникающий до прорезывания зуба под воздействием общих и местных факторов, сопровождающийся деминерализацией эмали с последующим образованием дефекта в виде полости.", "патологический процесс твердых тканей, возникающий после прорезывания зуба под воздействием общих и местных факторов, сопровождающийся деминерализацией эмали с последующим образованием дефекта в виде полости.", "патологический процесс твердых тканей, возникающий после прорезывания зуба под воздействием общих и местных факторов, сопровождающийся минерализацией эмали с последующим образованием дефекта в виде полости."],
-        answer: 1,
-    },
-    {question: "Назовите класс по Блэку",
-        image: `<img src= "./image/Black2.png" />`,
-        options: ["I", "II","III-IV", "V"],
-        answer: 1,
-    },
-    {question: "Назовите класс по Блэку",
-        image: `<img src= "./image/Black1.png" />`,
-        options: ["I", "II","III-IV", "V"],
-        answer: 0,
-    },
-    {question: "Назовите класс по Блэку",
-        image: `<img src= "./image/black5.png" />`,
-        options: ["I", "II","III-IV", "V"],
-        answer: 3,
-    },
-    {question: "Назовите класс по Блэку",
-        image: `<img src= "./image/Black3.png" />`,
-        options: ["I", "II","III-IV", "V"],
+    {
+        question: "Что из перечисленного применяется для лечения кариеса в стадии белого пятна?",
+        image: `<img src= "./image/surfaceCaries.jpg" />`,
+        options: [
+            "Пломбирование композитом",
+            "Иссечение пораженных тканей",
+            "Реминерализирующая терапия",
+            "Эндодонтическое лечение"
+        ],
         answer: 2,
     },
-    {question: "Что за поражение зубов представлено на фото?",
-        image: `<img src= "./image/flor.png" />`,
-        options: ["кариес", "гипоплазия","флюороз", "эрозия"],
-        answer: 2,
-    },
-    {question: "Назовите протез",
-        image: `<img src= "./image/structure.png" />`,
-        options: ["виниры", "вкладки","вкладки штифтовые", "коронки"],
+    {
+        question: "Рецидивный кариес - это:",
+        image: `<img src= "./image/cariesRecediv.jpg" />`,
+        options: [
+            "Кариес, возникший впервые на интактном зубе",
+            "Кариес, возникший по краю ранее поставленной пломбы",
+            "Кариес в стадии пятна",
+            "Кариес на нескольких зубах одновременно"
+        ],
         answer: 1,
     },
-    {question: "Назовите конструкцию вкладки",
-        image: `<img src= "./image/onlay.png" />`,
-        options: ["onlay", "inlay","overlay", "crown"],
+    {
+        question: "Какой вид кариеса принято называть осложненным (с. complicata)?",
+        options: [
+            "Кариес с поражением пульпы зуба",
+            "Кариес в стадии пигментированного пятна",
+            "Множественный кариес",
+            "Рецидивный кариес"
+        ],
         answer: 0,
     },
+    {
+        question: "Какой термин в классификации кариеса описывает поражение нескольких зубов одновременно?",
+        options: [
+            "Систематический кариес",
+            "Хронический кариес",
+            "Множественный кариес (с. systematica)",
+            "Рецидивный кариес"
+        ],
+        answer: 2,
+    },
+    {
+        question: "В чем заключается метод инфильтрации (Icon) при лечении кариеса?",
+        options: [
+            "Введение пломбировочного материала в полость",
+            "Пропитывание начальных кариозных поражений специальным составом",
+            "Удаление инфицированного дентина",
+            "Восстановление формы зуба композитом"
+        ],
+        answer: 1,
+    },
+    {
+        question: "Какой основной симптом периодонтита отличает его от пульпита?",
+        image: `<img src= "./image/pulpitPeriodontit.jpg" />`,
+        options: [
+            "Боль при накусывании на зуб",
+            "Самопроизвольная боль",
+            "Реакция на холодное",
+            "Кратковременная боль от сладкого"
+        ],
+        answer: 0,
+    },
+    {
+        question: "В отличие от вкладок, культево-штифтовые вкладки применяются для:",
+        image: `<img src= "./image/structure.jpg" />`,
+        options: [
+            "Восстановления незначительных дефектов зуба",
+            "Восстановления значительно разрушенной коронковой части зуба",
+            "Профилактики кариеса",
+            "Временного протезирования"
+        ],
+        answer: 1,
+    },
+    {
+        question: "Преимуществом вкладок по сравнению с пломбами является:",
+        options: [
+            "Быстрота изготовления",
+            "Более высокая прочность и точное восстановление анатомической формы",
+            "Возможность установки без препарирования тканей зуба",
+            "Меньшая стоимость"
+        ],
+        answer: 1,
+    },
+    {
+        question: "Какая из перечисленных конструкций используется для замещения включенных дефектов зубных рядов?",
+        options: [
+            "Вкладка",
+            "Штифтовой зуб",
+            "Мостовидный протез",
+            "Коронка"
+        ],
+        answer: 2,
+    },
+    {
+        question: "Что такое промежуточная часть мостовидного протеза?",
+        image: `<img src= "./image/bridge.jpg" />`,
+        options: [
+            "Часть протеза, фиксирующаяся на соседних зубах",
+            "Часть протеза, замещающая отсутствующие зубы",
+            "Металлический каркас протеза",
+            "Опорный элемент конструкции"
+        ],
+        answer: 1,
+    },
+    {
+        question: "Какой тип промежуточной части мостовидного протеза лучше всего подходит для фронтальной группы зубов?",
+        options: [
+            "Промывная",
+            "Касательная",
+            "Седловидная",
+            "Комбинированная"
+        ],
+        answer: 1,
+    },
+    {
+        question: "Какое из перечисленных противопоказаний к изготовлению мостовидных протезов является абсолютным?",
+        options: [
+            "Дефекты, ограниченные зубами с низкими клиническими коронками",
+            "Дефекты, дистально ограниченные зубом с патологической подвижностью",
+            "Дефекты средней протяженности",
+            "Альвеолярный отросток без атрофии"
+        ],
+        answer: 1,
+    },
+    {
+        question: "Какой материал для изготовления металлокерамических конструкций может вызывать потемнение десны, но обладает антибактериальным эффектом?",
+        options: [
+            "Кобальт-хром (CoCr)",
+            "Титан (Ti)",
+            "Серебро-палладий (AgPd)",
+            "Золото (Au)"
+        ],
+        answer: 2,
+    },
+    {
+        question: "Какой из перечисленных материалов является самым гипоаллергенным для изготовления ортопедических конструкций?",
+        options: [
+            "Никель-хром (NiCr)",
+            "Титан (Ti)",
+            "Кобальт-хром (CoCr)",
+            "Серебро-палладий (AgPd)"
+        ],
+        answer: 1,
+    },
+    {
+        question: "Какой из недостатков мостовидных протезов является наиболее существенным с точки зрения долгосрочного прогноза?",
+        options: [
+            "Необходимость препарирования опорных зубов",
+            "Сложность гигиенического ухода",
+            "Длительный период адаптации",
+            "Высокая стоимость"
+        ],
+        answer: 0,
+    }
 ];
 
 let currentQuestion = 0;
 let userAnswers = new Array(questions.length).fill(null);
 let score = 0;
+let tempSelectedOption = null;
 
 const questionContainer = document.getElementById('question-container');
 const prevBtn = document.getElementById('prev-btn');
@@ -116,6 +325,7 @@ totalQuestionsSpan.textContent = questions.length;
 function displayQuestion() {
     const question = questions[currentQuestion];
     currentQuestionSpan.textContent = currentQuestion + 1;
+    tempSelectedOption = userAnswers[currentQuestion];
 
     let html = `
         <div class="question">
@@ -125,15 +335,15 @@ function displayQuestion() {
     `;
 
     question.options.forEach((option, index) => {
-        const isSelected = userAnswers[currentQuestion] === index;
-        const isCorrect = question.answer === index;
-        const showExplanation = userAnswers[currentQuestion] !== null;
+        const isSelected = tempSelectedOption === index;
+        const isCorrect = userAnswers[currentQuestion] !== null && question.answer === index;
+        const isIncorrect = userAnswers[currentQuestion] !== null && userAnswers[currentQuestion] === index && userAnswers[currentQuestion] !== question.answer;
 
         let optionClass = 'option';
         if (isSelected) optionClass += ' selected';
-        if (showExplanation) {
+        if (userAnswers[currentQuestion] !== null) {
             if (isCorrect) optionClass += ' correct';
-            else if (isSelected) optionClass += ' incorrect';
+            else if (isIncorrect) optionClass += ' incorrect';
         }
 
         html += `
@@ -146,19 +356,34 @@ function displayQuestion() {
     html += `</div></div>`;
     questionContainer.innerHTML = html;
 
-    // Update navigation buttons
     prevBtn.disabled = currentQuestion === 0;
 
-    // Изменение текста кнопки на последнем вопросе
-    if (currentQuestion === questions.length - 1) {
-        nextBtn.textContent = 'Показать результаты';
+    // В функции displayQuestion():
+    if (userAnswers[currentQuestion] === null) {
+        nextBtn.textContent = 'Ответить';
+        nextBtn.classList.add('answer-mode');
+        nextBtn.classList.remove('results-mode');
+        nextBtn.disabled = tempSelectedOption === null;
     } else {
-        nextBtn.textContent = 'Вперед';
+        if (currentQuestion === questions.length - 1) {
+            nextBtn.textContent = 'Показать результаты';
+            nextBtn.classList.add('results-mode');
+            nextBtn.classList.remove('answer-mode');
+        } else {
+            nextBtn.textContent = 'Вперед';
+            nextBtn.classList.remove('answer-mode', 'results-mode');
+        }
+        nextBtn.disabled = false;
     }
+
+    // Блокируем кнопку "Вперед", если ответ не выбран (кроме случаев, когда ответ уже зафиксирован)
+    nextBtn.disabled = userAnswers[currentQuestion] === null && tempSelectedOption === null;
 
     // Add event listeners to options
     document.querySelectorAll('.option').forEach(option => {
-        option.addEventListener('click', selectOption);
+        if (userAnswers[currentQuestion] === null) {
+            option.addEventListener('click', selectOption);
+        }
     });
 }
 
@@ -166,40 +391,66 @@ function selectOption(e) {
     if (userAnswers[currentQuestion] !== null) return;
 
     const selectedIndex = parseInt(e.currentTarget.getAttribute('data-option'));
-    userAnswers[currentQuestion] = selectedIndex;
+    tempSelectedOption = selectedIndex;
 
-    if (selectedIndex === questions[currentQuestion].answer) {
-        score++;
-    }
+    document.querySelectorAll('.option').forEach(opt => {
+        opt.classList.remove('selected');
+    });
 
-    displayQuestion();
+    e.currentTarget.classList.add('selected');
+
+    // Разблокируем кнопку "Вперед", так как ответ выбран
+    nextBtn.disabled = false;
 }
 
-// Navigation functions
-function goToNextQuestion() {
-    if (currentQuestion < questions.length - 1) {
-        currentQuestion++;
+function handleNextAction() {
+    // Если ответ еще не зафиксирован, но выбран вариант - фиксируем ответ
+    if (userAnswers[currentQuestion] === null && tempSelectedOption !== null) {
+        userAnswers[currentQuestion] = tempSelectedOption;
+
+        if (tempSelectedOption === questions[currentQuestion].answer) {
+            score++;
+        }
+
+        // Обновляем отображение вопроса
         displayQuestion();
-    } else {
-        // Явно вызываем отображение результатов при нажатии на кнопку на последнем вопросе
-        displayResults();
+
+        // Если это был последний вопрос - показываем результаты
+        if (currentQuestion === questions.length - 1) {
+            displayResults();
+        }
     }
+    // Если ответ уже зафиксирован - просто переходим к следующему вопросу
+    else if (userAnswers[currentQuestion] !== null) {
+        if (currentQuestion < questions.length - 1) {
+            currentQuestion++;
+            tempSelectedOption = null;
+            displayQuestion();
+        } else {
+            displayResults();
+        }
+    }
+    // Если ничего не выбрано - ничего не делаем (кнопка и так заблокирована)
 }
 
 function goToPrevQuestion() {
     if (currentQuestion > 0) {
         currentQuestion--;
+        tempSelectedOption = userAnswers[currentQuestion];
         displayQuestion();
     }
 }
 
 function displayResults() {
-    // Скрываем контейнер с вопросами и навигационные кнопки
+    if (userAnswers.includes(null)) {
+        alert('Пожалуйста, ответьте на все вопросы перед просмотром результатов.');
+        return;
+    }
+
     questionContainer.style.display = 'none';
     prevBtn.style.display = 'none';
     nextBtn.style.display = 'none';
 
-    // Показываем результаты и кнопку перезапуска
     resultsDiv.style.display = 'block';
     restartBtn.style.display = 'inline-block';
 
@@ -235,24 +486,22 @@ function displayResults() {
 }
 
 function restartQuiz() {
-    // Сбрасываем все переменные и состояния
     currentQuestion = 0;
     score = 0;
     userAnswers = new Array(questions.length).fill(null);
+    tempSelectedOption = null;
 
-    // Скрываем результаты и показываем вопросы
     resultsDiv.style.display = 'none';
     restartBtn.style.display = 'none';
     questionContainer.style.display = 'block';
     prevBtn.style.display = 'inline-block';
     nextBtn.style.display = 'inline-block';
 
-    // Отображаем первый вопрос
     displayQuestion();
 }
 
 // Event listeners
-nextBtn.addEventListener('click', goToNextQuestion);
+nextBtn.addEventListener('click', handleNextAction);
 prevBtn.addEventListener('click', goToPrevQuestion);
 restartBtn.addEventListener('click', restartQuiz);
 
