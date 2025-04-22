@@ -158,15 +158,116 @@ button:disabled {
     text-align: center;
 }
 
-.results {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #e2e3e5;
-    border-radius: 5px;
+/* Results Page Styles */
+.results-container {
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    display: none;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.results-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.results-summary {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.answers-list {
+    margin-top: 20px;
+}
+
+.answer-item {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-left: 4px solid #ddd;
+}
+
+.answer-item.correct {
+    background-color: #f0fff0;
+    border-left-color: #28a745;
+}
+
+.answer-item.incorrect {
+    background-color: #fff0f0;
+    border-left-color: #dc3545;
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.status-badge {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.status-badge.correct {
+    background-color: #28a745;
+    color: white;
+}
+
+.status-badge.incorrect {
+    background-color: #dc3545;
+    color: white;
+}
+
+.question-image-container {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.question-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.answer-comparison {
+    margin-top: 10px;
+}
+
+.user-answer {
+    margin-bottom: 5px;
+}
+
+.correct-answer {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.restart-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.restart-button:hover {
+    background-color: #2980b9;
 }
 
 #restart-btn {
@@ -184,5 +285,19 @@ button:disabled {
     /*.options, button {*/
     /*    height: 60px;*/
     /*}*/
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.progress {
+    height: 100%;
+    background: #4caf50;
+    border-radius: 5px;
+    transition: width 0.3s ease;
 }
 
