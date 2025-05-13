@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import QuizSelectionPage from './components/QuizSelectionPage';
 import QuizPage from './components/QuizPage';
 import './styles/style.css';
+import './styles/QuizSelectionPage.css';
 
 function App() {
     return (

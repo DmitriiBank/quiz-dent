@@ -92,7 +92,7 @@ const QuizApp = ({ questions }) => {
           </div>
           {q.image && (
               <div className="question-image-container">
-                <img src={q.image} alt="вопрос" className="question-image" />
+                <img src={process.env.PUBLIC_URL + q.image} alt="вопрос" className="question-image" />
               </div>
           )}
           <div className="options">

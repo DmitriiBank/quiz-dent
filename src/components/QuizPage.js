@@ -30,7 +30,7 @@ const QuizPage = () => {
 
   return (
       <div className="quiz-page">
-        <h2>{quiz.title}</h2>
+        <h2>{quiz.title}:  {quiz.description}</h2>
         <QuizApp questions={quiz.questions} />
       </div>
   );

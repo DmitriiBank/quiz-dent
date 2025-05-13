@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './QuizSelectionPage.css';
+import '../styles/QuizSelectionPage.css';
 
 const quizzes = [
   {
@@ -20,6 +20,12 @@ const quizzes = [
     id: "lesson3",
     title: "Лекция 3",
     description: "Окклюзия",
+    icon: "/image/icon_3.png",
+  },
+  {
+    id: "lesson4",
+    title: "Лекция 4",
+    description: "Окклюзия, прикус, артикуляция",
     icon: "/image/icon_4.png",
   },
   {
@@ -38,18 +44,20 @@ const QuizSelectionPage = () => {
   };
 
   return (
-    <div className="selection-container">
-      <h1>Выберите тест</h1>
-      <div className="quiz-list">
-        {quizzes.map((quiz) => (
-          <div key={quiz.id} className="quiz-card" onClick={() => handleSelect(quiz.id)}>
-            <img src={quiz.icon} alt={quiz.title} />
-            <h2>{quiz.title}</h2>
-            <p>{quiz.description}</p>
+      <div className="quiz-selection-container">
+        <div className="selection-header">
+          <h1>Выберите тест</h1>
+          <div className="quiz-categories">
+            {quizzes.map((quiz) => (
+                <div key={quiz.id} className="quiz-card" onClick={() => handleSelect(quiz.id)}>
+                  <img src={process.env.PUBLIC_URL + quiz.icon} alt={quiz.title} className="quiz-icon"/>
+                  <h2>{quiz.title}</h2>
+                  <p className="quiz-description">{quiz.description}</p>
+                </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </div>
   );
 };
 
