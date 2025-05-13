@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/DmitriiBank/quiz-dent/static/css/main.1b01efdd.css",
-    "main.js": "/DmitriiBank/quiz-dent/static/js/main.83481708.js",
-    "index.html": "/DmitriiBank/quiz-dent/index.html",
-    "main.1b01efdd.css.map": "/DmitriiBank/quiz-dent/static/css/main.1b01efdd.css.map",
-    "main.83481708.js.map": "/DmitriiBank/quiz-dent/static/js/main.83481708.js.map"
+    "main.css": "/quiz-dent/static/css/main.1b01efdd.css",
+    "main.js": "/quiz-dent/static/js/main.1b9f60a9.js",
+    "index.html": "/quiz-dent/index.html",
+    "main.1b01efdd.css.map": "/quiz-dent/static/css/main.1b01efdd.css.map",
+    "main.1b9f60a9.js.map": "/quiz-dent/static/js/main.1b9f60a9.js.map"
   },
   "entrypoints": [
     "static/css/main.1b01efdd.css",
-    "static/js/main.83481708.js"
+    "static/js/main.1b9f60a9.js"
   ]
 }
